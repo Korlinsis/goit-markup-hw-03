@@ -9,6 +9,19 @@
 
   --background-dark: #2f303a;
   --background-light: #f5f4fa;
+
+  --border-color-header: #ececec;
+  --border-color-project: #eeeeee;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
@@ -42,11 +55,17 @@ p {
   color: var(--grey-text);
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 header {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--border-color-header);
 }
 
 footer {
@@ -57,6 +76,8 @@ footer {
   font-size: 14px;
   line-height: 1.71;
 }
+
+/* Стилі для лого */
 
 .logo {
   font-family: "Raleway", sans-serif;
@@ -77,25 +98,31 @@ footer {
   color: var(--black);
 }
 
-.container,
-.container-header,
-.container-hero {
+/* Стилі загальних контейнерів */
+
+.container {
   width: 1200px;
   padding: 0 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.container-header,
+.header,
 .activity,
 .benefits,
 .header-nav,
 .list-nav,
-.header-contacts {
+.team,
+.header-contacts,
+.button-list,
+.projects {
   display: flex;
 }
 
-.header-nav {
-  padding-top: 24px;
-  padding-bottom: 25px;
+/* Стилі для хедера */
+
+.header {
+  justify-content: space-between;
 }
 
 .list-nav {
@@ -110,13 +137,18 @@ footer {
   margin-right: 0px;
 }
 
-.container-header,
+.header,
 .header-nav {
-  justify-content: space-between;
   align-items: center;
 }
 
+.header-nav .logo {
+  padding: 24px 0 25px;
+}
+
 .header-nav li a {
+  display: inline-block;
+  padding: 17px 0px;
   text-decoration: none;
   color: inherit;
 }
@@ -129,8 +161,33 @@ footer {
 }
 
 .header-contacts a {
+  display: inline-block;
+  padding: 17px 0px;
   text-decoration: none;
   color: var(--grey-text);
+}
+
+.header-contacts li:not(:last-child) {
+  margin-right: 50px;
+}
+
+/* Стилі Футера */
+
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.footer address {
+  margin-top: 20px;
+}
+
+.footer ul {
+  margin-top: 9px;
+}
+
+.footer ul :not(:first-child) {
+  margin-top: 9px;
 }
 
 .footer-contacts {
@@ -138,9 +195,7 @@ footer {
   color: var(--grey-text-op60);
 }
 
-.header-contacts li:last-child {
-  margin-left: 50px;
-}
+/* Додаткові стилі */
 
 .section-light {
   background-color: var(--background-light);
@@ -148,15 +203,9 @@ footer {
 
 .section-dark {
   background-color: var(--background-dark);
-  padding: 200 auto;
 }
 
-.container .logo {
-  margin-top: 60px;
-  margin-bottom: 20px;
-}
-
-.current {
+.list-nav .current {
   color: var(--blue);
 }
 
