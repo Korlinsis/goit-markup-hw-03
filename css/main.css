@@ -1,7 +1,7 @@
 :root {
   --white: #ffffff;
   --black: #000000;
-  --blue: #2196f3;
+  --accent: #2196f3;
 
   --black-text: #212121;
   --grey-text: #757575;
@@ -41,7 +41,6 @@ h1 {
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding-top: 200px;
 }
 
 h2 {
@@ -72,9 +71,16 @@ footer {
   background-color: var(--background-dark);
   color: var(--white);
 
+  padding-top: 60px;
+  padding-bottom: 60px;
+
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
+}
+
+section {
+  padding: 94px 0;
 }
 
 /* Стилі для лого */
@@ -87,7 +93,7 @@ footer {
   letter-spacing: 0.03em;
   text-decoration: none;
 
-  color: var(--blue);
+  color: var(--accent);
 }
 
 .logo-white {
@@ -107,13 +113,12 @@ footer {
   margin-left: auto;
 }
 
-.header,
-.activity,
-.benefits,
 .header-nav,
 .list-nav,
-.team,
 .header-contacts,
+.benefits,
+.activity,
+.team,
 .button-list,
 .projects {
   display: flex;
@@ -121,8 +126,15 @@ footer {
 
 /* Стилі для хедера */
 
-.header {
+header .container {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+header,
+.header-nav {
+  align-items: center;
 }
 
 .list-nav {
@@ -137,9 +149,8 @@ footer {
   margin-right: 0px;
 }
 
-.header,
-.header-nav {
-  align-items: center;
+.list-nav .current {
+  color: var(--accent);
 }
 
 .header-nav .logo {
@@ -157,7 +168,7 @@ footer {
 .header-nav li a:focus,
 .header-contacts a:hover,
 .header-contacts a:focus {
-  color: var(--blue);
+  color: var(--accent);
 }
 
 .header-contacts a {
@@ -173,20 +184,15 @@ footer {
 
 /* Стилі Футера */
 
-.footer {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.footer address {
+footer address {
   margin-top: 20px;
 }
 
-.footer ul {
+footer ul {
   margin-top: 9px;
 }
 
-.footer ul :not(:first-child) {
+footer ul :not(:first-child) {
   margin-top: 9px;
 }
 
@@ -196,18 +202,6 @@ footer {
 }
 
 /* Додаткові стилі */
-
-.section-light {
-  background-color: var(--background-light);
-}
-
-.section-dark {
-  background-color: var(--background-dark);
-}
-
-.list-nav .current {
-  color: var(--blue);
-}
 
 .visually-hidden {
   position: absolute;
